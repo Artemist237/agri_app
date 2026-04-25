@@ -1,0 +1,20 @@
+<form action="/ajouter_production" method="POST" class="card p-4">
+    <h3>Ajouter une production</h3>
+    
+    <select name="parcelle_id" class="form-control mb-2" required>
+        {% for p in parcelles %}
+            <option value="{{ p.id }}">{{ p.localisation }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="culture_id" class="form-control mb-2" required>
+        {% for c in cultures %}
+            <option value="{{ c.id }}">{{ c.nom }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="number" name="quantite" class="form-control mb-2" placeholder="Quantité (tonnes)" step="0.1" required>
+    <input type="date" name="date_production" class="form-control mb-2" required>
+    
+    <button type="submit" class="btn btn-success">Enregistrer</button>
+</form>

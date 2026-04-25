@@ -1,0 +1,22 @@
+/* Reset mobile */
+* { box-sizing: border-box; }
+html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; background-color: #f8f9fa; }
+
+/* Sidebar Desktop */
+.sidebar { 
+    height: 100vh; width: 250px; position: fixed; left: 0; top: 0; 
+    background: #212529; padding-top: 20px; z-index: 1000;
+}
+.sidebar a { color: #adb5bd; padding: 15px 25px; display: block; text-decoration: none; }
+.sidebar a:hover { color: white; background: #32383e; }
+.main-content { margin-left: 250px; padding: 20px; }
+
+/* Responsive Mobile (Le switch) */
+@media (max-width: 768px) {
+    .sidebar { 
+        height: auto; width: 100%; position: relative; 
+        padding: 5px; display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    .sidebar h4 { display: none; }
+    .main-content { margin-left: 0; padding-top: 20px; }
+}
