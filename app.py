@@ -63,8 +63,12 @@ def login():
         return redirect(url_for('dashboard'))
     return render_template('login.html')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST']) # Ajoute methods=['GET', 'POST'] ici
 def register():
+    if request.method == 'POST':
+        # Pour l'instant, on redirige simplement vers le dashboard
+        # Plus tard, tu pourras ajouter la logique pour créer un utilisateur
+        return redirect(url_for('dashboard'))
     return render_template('register.html')
 
 @app.route('/analyse')
